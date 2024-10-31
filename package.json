@@ -24,6 +24,13 @@
     "globals": "^15.11.0",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.11.0",
-    "vite": "^5.4.10"
+    "vite": "^5.4.10",
+     "ts-standard": "^12.0.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "./node_modules/ts-standard/eslintrc.json",
+       "plugin:@typescript-eslint/recommended"
+    ]
   }
 }

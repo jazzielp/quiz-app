@@ -5,7 +5,7 @@ export default {
     './src/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    color: {
+    colors: {
       purpol: '#A729F5',
       darkNavy: '#313E51',
       navy: '#3B4D66',

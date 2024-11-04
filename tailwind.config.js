@@ -16,7 +16,11 @@ export default {
       green: '##26D782',
       red: '#EE5454'
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        rubik: ['Rubik', 'sans-serif']
+      }
+    }
   },
   plugins: []
 }

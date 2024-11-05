@@ -1,5 +1,6 @@
 import './App.css'
-import { Button } from './components/Buttons'
+import { Answer } from '@/components/Answer'
+import { Button } from '@/components/Buttons'
 
 function App (): JSX.Element {
   return (
@@ -7,6 +8,7 @@ function App (): JSX.Element {
       <h1>Hello world</h1>
       <p className='font-rubik'>alsdkasdlasdkaslkdlasd</p>
       <Button text='Button Idle' />
+      <Answer answer='cc' option='cc' number={1} selected={false} />
     </>
   )
 }

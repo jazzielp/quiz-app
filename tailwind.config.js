@@ -13,7 +13,7 @@ export default {
       lightBluish: '#ABC1E1',
       lightGrey: '#F4F6FA',
       white: '#ffffff',
-      green: '##26D782',
+      green: '#26D782',
       red: '#EE5454'
     },
     extend: {

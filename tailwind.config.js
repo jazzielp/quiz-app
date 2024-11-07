@@ -4,6 +4,7 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}'
   ],
+  darkMode: 'class',
   theme: {
     colors: {
       purpol: '#A729F5',
@@ -19,6 +20,15 @@ export default {
     extend: {
       fontFamily: {
         rubik: ['Rubik', 'sans-serif']
+      },
+      backgroundImage: {
+        desktopLight: "url('/src/assets/imgs/pattern-background-desktop-light.svg')",
+        tabletLight: "url('/src/assets/imgs/pattern-background-tablet-light.svg')",
+        mobileLight: "url('/src/assets/imgs/pattern-background-mobile-light.svg')",
+        desktopDark: "url('/src/assets/imgs/pattern-background-desktop-dark.svg')",
+        tabletDark: "url('/src/assets/imgs/pattern-background-tablet-dark.svg')",
+        mobileDark: "url('/src/assets/imgs/pattern-background-mobile-dark.svg')"
+
       }
     }
   },

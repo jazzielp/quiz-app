@@ -22,12 +22,12 @@ export default {
         rubik: ['Rubik', 'sans-serif']
       },
       backgroundImage: {
-        desktopLight: "url('/src/assets/imgs/pattern-background-desktop-light.svg')",
-        tabletLight: "url('/src/assets/imgs/pattern-background-tablet-light.svg')",
-        mobileLight: "url('/src/assets/imgs/pattern-background-mobile-light.svg')",
-        desktopDark: "url('/src/assets/imgs/pattern-background-desktop-dark.svg')",
-        tabletDark: "url('/src/assets/imgs/pattern-background-tablet-dark.svg')",
-        mobileDark: "url('/src/assets/imgs/pattern-background-mobile-dark.svg')"
+        desktopLight: "url('/src/assets/images/pattern-background-desktop-light.svg')",
+        tabletLight: "url('/src/assets/images/pattern-background-tablet-light.svg')",
+        mobileLight: "url('/src/assets/images/pattern-background-mobile-light.svg')",
+        desktopDark: "url('/src/assets/images/pattern-background-desktop-dark.svg')",
+        tabletDark: "url('/src/assets/images/pattern-background-tablet-dark.svg')",
+        mobileDark: "url('/src/assets/images/pattern-background-mobile-dark.svg')"
 
       }
     }

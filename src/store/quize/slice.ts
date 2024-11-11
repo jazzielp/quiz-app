@@ -7,7 +7,7 @@ const initialState: IGlobalState = {
   quizzes,
   quize: [],
   answer: '',
-  mode: MODE.light
+  mode: MODE.dark
 }
 
 export const quizzesSlice = createSlice({

@@ -1,13 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { quizzes } from '@/db/data.json'
+import { IGlobalState } from '@/types/types'
+import { MODE } from '@/consts/consts'
 
-const initialState = {
-  quizzes: 
+const initialState: IGlobalState = {
+  quizzes,
+  quize: [],
+  answer: '',
+  mode: MODE.light
 }
 
-export const userSlice = createSlice({
+export const quizzesSlice = createSlice({
   name: 'quizzes',
   initialState,
-  reducer:{}
+  reducers: {}
 })
 
-export default userSlice.reducer
+export default quizzesSlice.reducer

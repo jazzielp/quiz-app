@@ -1,6 +1,6 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { quizzes } from '@/db/data.json'
-import { IGlobalState } from '@/types/types'
+import { IGlobalState, ModeType } from '@/types/types'
 import { MODE } from '@/consts/consts'
 
 const initialState: IGlobalState = {
@@ -13,7 +13,12 @@ const initialState: IGlobalState = {
 export const quizzesSlice = createSlice({
   name: 'quizzes',
   initialState,
-  reducers: {}
+  reducers: {
+    changeMode: (state, action: PayloadAction<ModeType>) => {
+      state.mode = action.payload
+    }
+  }
 })
 
 export default quizzesSlice.reducer
+export const { changeMode } = quizzesSlice.actions

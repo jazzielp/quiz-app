@@ -24,7 +24,6 @@ export function Answer ({ answer, option, number, selected }: Params): JSX.Eleme
     spanStyle = 'bg-purpol text-white'
     divStyle = 'border-purpol'
   }
-  console.log(spanStyle)
   return (
     <div className={`group w-[528px] h-[92px] rounded-3xl p-[18px] flex justify-between hover:cursor-pointer items-center gap-8 border-[3px] ${divStyle}`}>
       <span className={`size-14 flex justify-center items-center rounded-lg ${selected ? '' : 'group-hover:bg-[#F6E7FF] transition-colors group-hover:text-purpol'} font-medium font-rubik text-[28px] ${spanStyle}`}>

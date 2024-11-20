@@ -15,7 +15,11 @@ export default {
       lightGrey: '#F4F6FA',
       white: '#ffffff',
       green: '#26D782',
-      red: '#EE5454'
+      red: '#EE5454',
+      bgHtml: '#FFF1E9',
+      bgCss: '#E0FDEF',
+      bgJs: '#EBF0FF',
+      bgAccessibility: '#F6E7FF'
     },
     extend: {
       fontFamily: {

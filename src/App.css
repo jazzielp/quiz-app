@@ -18,3 +18,20 @@
   font-weight: 400;
   font-style: italic;
 }
+
+
+.bgHtml {
+  background-color: #FFF1E9;
+}
+
+.bgCss {
+  background-color: #E0FDEF;
+}
+
+.bgJs {
+  background-color:#EBF0FF;
+}
+
+.bgAccessibility {
+  background-color: #F6E7FF;
+}

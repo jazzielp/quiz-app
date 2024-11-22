@@ -14,9 +14,9 @@ export function Home (): JSX.Element {
         </div>
         <div className='mt-10 lg:m-0 md:mt-16 flex gap-3 md:gap-6 flex-col'>
           {
-          quizzes?.map((quiz) => {
-            const { title, icon, color } = quiz
-            return <SelectQuiz key={quiz.title} title={title} img={icon} color={color} />
+          quizzes?.map((quiz, index) => {
+            const { title, icon } = quiz
+            return <SelectQuiz key={quiz.title} title={title} img={icon} index={index} />
           })
         }
         </div>

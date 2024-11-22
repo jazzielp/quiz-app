@@ -1,9 +1,10 @@
 import { useAppDispatch } from '@/hooks/store'
-import { changeMode } from '@/store/quize/slice'
-import { ModeType } from '@/types/types'
+import { changeMode, updateQuize } from '@/store/quize/slice'
+import { IQuiz, ModeType } from '@/types/types'
 
 interface QuizzesActions {
   setDarkMode: (mode: ModeType) => void
+  setQuiz: (quiz: IQuiz) => void
 }
 
 export function useQuizzesActions (): QuizzesActions {
@@ -11,5 +12,9 @@ export function useQuizzesActions (): QuizzesActions {
   const setDarkMode = (mode: ModeType): void => {
     dispatch(changeMode(mode))
   }
-  return { setDarkMode }
+
+  const setQuiz = (quiz: IQuiz): void => {
+    dispatch(updateQuize(quiz))
+  }
+  return { setDarkMode, setQuiz }
 }

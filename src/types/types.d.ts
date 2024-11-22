@@ -19,7 +19,7 @@ export interface IQuestion {
 
 export interface IGlobalState {
   quizzes: Quiz[]
-  quize: Quiz | []
+  quiz: Quiz | []
   answer: string
   mode: ModeType
 }

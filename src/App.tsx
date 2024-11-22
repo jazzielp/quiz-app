@@ -6,7 +6,6 @@ import { Quiz } from './components/Quiz'
 
 function App (): JSX.Element {
   const { quiz } = useAppSelector((state) => state.quizzes)
-  console.log(quiz)
   return (
     <>
       {

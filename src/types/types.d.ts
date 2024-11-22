@@ -1,5 +1,6 @@
-import { MODE } from '@/consts/consts'
+import { MODE, BG_COLOR_QUIZZES } from '@/consts/consts'
 export type ModeType = typeof MODE[keyof typeof MODE]
+export type QuizzesType = keyof typeof BG_COLOR_QUIZZES
 
 export interface IQuizzes {
   quizzes: Quiz[]
@@ -18,8 +19,8 @@ export interface IQuestion {
 }
 
 export interface IGlobalState {
-  quizzes: Quiz[]
-  quiz: Quiz | []
+  quizzes: IQuiz[]
+  quiz: IQuiz | null
   answer: string
   mode: ModeType
 }

@@ -5,7 +5,7 @@ export const MODE = {
   light: 'light'
 } as const
 
-export const BG_COLOR_CURSOS = {
+export const BG_COLOR_QUIZZES = {
   HTML: 'bgHtml',
   CSS: 'bgCss',
   JavaScript: 'bgJs',

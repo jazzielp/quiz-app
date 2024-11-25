@@ -23,4 +23,5 @@ export interface IGlobalState {
   quiz: IQuiz | null
   answer: string
   mode: ModeType
+  indexQuestion: number
 }

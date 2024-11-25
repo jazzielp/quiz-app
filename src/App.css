@@ -36,6 +36,10 @@
   background-color: #F6E7FF;
 }
 
+.porc-0 {
+  width: 0;
+}
+
 .porc-10 {
   width: 10%;
 }

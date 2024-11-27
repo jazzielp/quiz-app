@@ -3,13 +3,13 @@ export type ModeType = typeof MODE[keyof typeof MODE]
 export type QuizzesType = keyof typeof BG_COLOR_QUIZZES
 
 export interface IQuizzes {
-  quizzes: Quiz[]
+  quizzes: IQuiz[]
 }
 
 export interface IQuiz {
   title: string
   icon: string
-  questions: Question[]
+  questions: IQuestion[]
 }
 
 export interface IQuestion {

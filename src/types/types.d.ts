@@ -21,7 +21,7 @@ export interface IQuestion {
 export interface IGlobalState {
   quizzes: IQuiz[]
   quiz: IQuiz | null
-  answer: string
+  userAnswer: string
   mode: ModeType
   indexQuestion: number
 }

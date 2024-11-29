@@ -6,7 +6,7 @@ import { MODE } from '@/consts/consts'
 const initialState: IGlobalState = {
   quizzes,
   quiz: null,
-  answer: '',
+  userAnswer: '',
   mode: MODE.dark,
   indexQuestion: 0
 }

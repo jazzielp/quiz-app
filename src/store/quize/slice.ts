@@ -20,9 +20,12 @@ export const quizzesSlice = createSlice({
     },
     updateQuize: (state, action: PayloadAction<IQuiz>) => {
       state.quiz = action.payload
+    },
+    selectedAnswer: (state, action: PayloadAction<string>) => {
+      state.userAnswer = action.payload
     }
   }
 })
 
 export default quizzesSlice.reducer
-export const { changeMode, updateQuize } = quizzesSlice.actions
+export const { changeMode, updateQuize, selectedAnswer } = quizzesSlice.actions

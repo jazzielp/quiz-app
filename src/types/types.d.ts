@@ -24,4 +24,6 @@ export interface IGlobalState {
   userAnswer: string
   mode: ModeType
   indexQuestion: number
+  isAnswerCorrect: undefined | boolean
+  countAnswerCorrect: number
 }

@@ -1,11 +1,12 @@
 import { useAppDispatch } from '@/hooks/store'
-import { changeMode, updateQuize, selectedAnswer } from '@/store/quize/slice'
+import { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect } from '@/store/quize/slice'
 import { IQuiz, ModeType } from '@/types/types'
 
 interface QuizzesActions {
   setDarkMode: (mode: ModeType) => void
   setQuiz: (quiz: IQuiz) => void
   setUserAnswer: (answer: string) => void
+  setIsAnswerCorrect: (isCorrect: boolean) => void
 }
 
 export function useQuizzesActions (): QuizzesActions {
@@ -21,5 +22,9 @@ export function useQuizzesActions (): QuizzesActions {
   const setUserAnswer = (answer: string): void => {
     dispatch(selectedAnswer(answer))
   }
-  return { setDarkMode, setQuiz, setUserAnswer }
+
+  const setIsAnswerCorrect = (isCorrect: boolean): void => {
+    dispatch(updateIsAnswerCorrect(isCorrect))
+  }
+  return { setDarkMode, setQuiz, setUserAnswer, setIsAnswerCorrect }
 }

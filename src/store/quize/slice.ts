@@ -8,7 +8,9 @@ const initialState: IGlobalState = {
   quiz: null,
   userAnswer: '',
   mode: MODE.dark,
-  indexQuestion: 0
+  indexQuestion: 0,
+  isAnswerCorrect: undefined,
+  countAnswerCorrect: 0
 }
 
 export const quizzesSlice = createSlice({
@@ -23,9 +25,12 @@ export const quizzesSlice = createSlice({
     },
     selectedAnswer: (state, action: PayloadAction<string>) => {
       state.userAnswer = action.payload
+    },
+    updateIsAnswerCorrect: (state, action: PayloadAction<boolean>) => {
+      state.isAnswerCorrect = action.payload
     }
   }
 })
 
 export default quizzesSlice.reducer
-export const { changeMode, updateQuize, selectedAnswer } = quizzesSlice.actions
+export const { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect } = quizzesSlice.actions

@@ -18,7 +18,7 @@ export function Answers (): JSX.Element {
     }
   }, [quiz])
 
-  const handleButtonClick = (): void => {
+  const handleSubmitAnswer = (): void => {
     if (userAnswer === '') {
       setIsEmptyAnswer(true)
     } else if (userAnswer === correctAnswer) {
@@ -28,15 +28,26 @@ export function Answers (): JSX.Element {
     }
   }
 
+  const handleNextQuestion = (): void => {}
+
   return (
     <div className='flex flex-col gap-6'>
 
       {
           options?.map((option, index) => (
-            <SelectAnswer isAnswerCorrect={isAnswerCorrect} correctAnswer={correctAnswer} key={option} option={option} number={index} selected={false} />
+            <SelectAnswer isAnswerCorrect={isAnswerCorrect} correctAnswer={correctAnswer} key={option} option={option} number={index} />
           ))
         }
-      <button onClick={handleButtonClick} className='w-full h-[92px] rounded-3xl bg-purpol hover:opacity-50 transition-opacity text-[28px] text-white font-rubik font-medium'>Submit Answer</button>
+      {
+        isAnswerCorrect === undefined &&
+          <button onClick={handleSubmitAnswer} className='w-full h-[92px] rounded-3xl bg-purpol hover:opacity-50 transition-opacity text-[28px] text-white font-rubik font-medium'>Submit Answer</button>
+
+      }
+      {
+        isAnswerCorrect !== undefined &&
+          <button onClick={handleNextQuestion} className='w-full h-[92px] rounded-3xl bg-purpol hover:opacity-50 transition-opacity text-[28px] text-white font-rubik font-medium'>Next Question</button>
+
+      }
       {
         isEmptyAnswer
           ? <div className='flex items-center justify-center gap-2'> <Error /> <p className='text-red font-rubik text-2xl'>Please select an answer</p>  </div>

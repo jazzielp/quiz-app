@@ -39,7 +39,7 @@ export function Question (): JSX.Element {
   }, [answeredPercentage])
 
   return (
-    <div className=''>
+    <div className='max-w-[465px]'>
       <p className='text-xl mb-7 font-rubik italic text-greyNavy'>{`Question ${(indexQuestion + 1)} of ${totalQuestion}`}</p>
       <h2 className='text-4xl mb-44 font-medium font-rubik text-darkNavy dark:text-white'>{question}</h2>
       <div className='w-full h-4 bg-white rounded-full'>

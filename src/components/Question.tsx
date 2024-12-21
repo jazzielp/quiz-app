@@ -2,7 +2,7 @@ import { useAppSelector } from '@/hooks/store'
 import { useEffect, useState } from 'react'
 
 export function Question (): JSX.Element {
-  const { indexQuestion, quiz } = useAppSelector((state) => state.quizzes)
+  const { indexQuestion, quiz, countAnswerCorrect } = useAppSelector((state) => state.quizzes)
   const [progressClass, setProgressClass] = useState('porc-0')
   const [totalQuestion, setTotalQuestion] = useState(0)
   const [question, setQuestion] = useState<string>()
@@ -11,7 +11,7 @@ export function Question (): JSX.Element {
       setTotalQuestion(quiz.questions.length)
       setQuestion(quiz.questions[indexQuestion].question)
     }
-  }, [quiz])
+  }, [quiz, indexQuestion])
   const answeredPercentage = indexQuestion / totalQuestion
 
   useEffect(() => {
@@ -45,6 +45,7 @@ export function Question (): JSX.Element {
       <div className='w-full h-4 bg-white rounded-full'>
         <div className={`h-full ${progressClass} bg-purpol rounded-full`} />
       </div>
+      <p>{countAnswerCorrect}</p>
     </div>
   )
 }

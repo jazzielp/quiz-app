@@ -6,7 +6,7 @@ import { useQuizzesActions } from '@/hooks/useQuizzes'
 
 export function Answers (): JSX.Element {
   const { quiz, indexQuestion, userAnswer, isAnswerCorrect } = useAppSelector((state) => state.quizzes)
-  const { setIsAnswerCorrect } = useQuizzesActions()
+  const { setIsAnswerCorrect, setCountAnswerCorrect, setIndexQuestion } = useQuizzesActions()
   const [options, setOptions] = useState<string[]>()
   const [correctAnswer, setCorrectAnswer] = useState<string>('')
   const [isEmptyAnswer, setIsEmptyAnswer] = useState(false)
@@ -16,7 +16,7 @@ export function Answers (): JSX.Element {
       setOptions(questions[indexQuestion].options)
       setCorrectAnswer(questions[indexQuestion].answer)
     }
-  }, [quiz])
+  }, [quiz, indexQuestion])
 
   const handleSubmitAnswer = (): void => {
     if (userAnswer === '') {
@@ -28,7 +28,14 @@ export function Answers (): JSX.Element {
     }
   }
 
-  const handleNextQuestion = (): void => {}
+  const handleNextQuestion = (): void => {
+    if (isAnswerCorrect === true) {
+      setCountAnswerCorrect()
+    }
+    setIsEmptyAnswer(false)
+    setIsAnswerCorrect(undefined)
+    setIndexQuestion()
+  }
 
   return (
     <div className='flex flex-col gap-6'>

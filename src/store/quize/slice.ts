@@ -26,11 +26,17 @@ export const quizzesSlice = createSlice({
     selectedAnswer: (state, action: PayloadAction<string>) => {
       state.userAnswer = action.payload
     },
-    updateIsAnswerCorrect: (state, action: PayloadAction<boolean>) => {
+    updateIsAnswerCorrect: (state, action: PayloadAction<boolean | undefined>) => {
       state.isAnswerCorrect = action.payload
+    },
+    incrementCountAnswerCorrect: (state) => {
+      state.countAnswerCorrect++
+    },
+    incrementIndexQuestion: (state) => {
+      state.indexQuestion++
     }
   }
 })
 
 export default quizzesSlice.reducer
-export const { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect } = quizzesSlice.actions
+export const { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect, incrementCountAnswerCorrect, incrementIndexQuestion } = quizzesSlice.actions

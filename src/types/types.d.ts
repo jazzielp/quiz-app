@@ -26,4 +26,5 @@ export interface IGlobalState {
   indexQuestion: number
   isAnswerCorrect: undefined | boolean
   countAnswerCorrect: number
+  quizIsCompleted: boolean
 }

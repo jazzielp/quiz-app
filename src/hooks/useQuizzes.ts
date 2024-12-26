@@ -5,7 +5,8 @@ import {
   selectedAnswer,
   updateIsAnswerCorrect,
   incrementCountAnswerCorrect,
-  incrementIndexQuestion
+  incrementIndexQuestion,
+  updateQuizIsCompleted
 }
   from '@/store/quize/slice'
 import { IQuiz, ModeType } from '@/types/types'
@@ -17,6 +18,7 @@ interface QuizzesActions {
   setIsAnswerCorrect: (isCorrect: boolean | undefined) => void
   setCountAnswerCorrect: () => void
   setIndexQuestion: () => void
+  setQuizIsCompleted: () => void
 }
 
 export function useQuizzesActions (): QuizzesActions {
@@ -45,5 +47,9 @@ export function useQuizzesActions (): QuizzesActions {
     dispatch(incrementIndexQuestion())
   }
 
-  return { setDarkMode, setQuiz, setUserAnswer, setIsAnswerCorrect, setCountAnswerCorrect, setIndexQuestion }
+  const setQuizIsCompleted = (): void => {
+    dispatch(updateQuizIsCompleted())
+  }
+
+  return { setDarkMode, setQuiz, setUserAnswer, setIsAnswerCorrect, setCountAnswerCorrect, setIndexQuestion, setQuizIsCompleted }
 }

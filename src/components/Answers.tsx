@@ -3,16 +3,19 @@ import { SelectAnswer } from './SelectAnswer'
 import { useEffect, useState } from 'react'
 import { Error } from '@/assets/icons/Error'
 import { useQuizzesActions } from '@/hooks/useQuizzes'
+import { IQuestion } from '@/types/types'
 
 export function Answers (): JSX.Element {
   const { quiz, indexQuestion, userAnswer, isAnswerCorrect } = useAppSelector((state) => state.quizzes)
-  const { setIsAnswerCorrect, setCountAnswerCorrect, setIndexQuestion } = useQuizzesActions()
+  const { setIsAnswerCorrect, setCountAnswerCorrect, setIndexQuestion, setUserAnswer, setQuizIsCompleted } = useQuizzesActions()
   const [options, setOptions] = useState<string[]>()
   const [correctAnswer, setCorrectAnswer] = useState<string>('')
   const [isEmptyAnswer, setIsEmptyAnswer] = useState(false)
+  const [question, setQuestion] = useState<IQuestion[]>([])
   useEffect(() => {
     if (quiz !== null) {
       const { questions } = quiz
+      setQuestion(questions)
       setOptions(questions[indexQuestion].options)
       setCorrectAnswer(questions[indexQuestion].answer)
     }
@@ -23,8 +26,10 @@ export function Answers (): JSX.Element {
       setIsEmptyAnswer(true)
     } else if (userAnswer === correctAnswer) {
       setIsAnswerCorrect(true)
+      setIsEmptyAnswer(false)
     } else {
       setIsAnswerCorrect(false)
+      setIsEmptyAnswer(false)
     }
   }
 
@@ -35,6 +40,10 @@ export function Answers (): JSX.Element {
     setIsEmptyAnswer(false)
     setIsAnswerCorrect(undefined)
     setIndexQuestion()
+    setUserAnswer('')
+    if (indexQuestion >= question.length) {
+      setQuizIsCompleted()
+    }
   }
 
   return (

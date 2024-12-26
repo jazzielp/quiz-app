@@ -41,7 +41,8 @@ export function Answers (): JSX.Element {
     setIsAnswerCorrect(undefined)
     setIndexQuestion()
     setUserAnswer('')
-    if (indexQuestion >= question.length) {
+    console.log(indexQuestion, question.length)
+    if (indexQuestion >= question.length - 1) {
       setQuizIsCompleted()
     }
   }

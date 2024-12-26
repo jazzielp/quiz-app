@@ -15,14 +15,17 @@ function App (): JSX.Element {
       setTotalQuestion(quiz?.questions.length)
     }
   }, [quiz, indexQuestion])
-  return (
-    <>
-      {quizIsCompleted && <QuizCompleted />}
-      {
-        totalQuestion > 0 ? <Quiz /> : <Home />
-      }
-    </>
-  )
+  console.log(quizIsCompleted)
+
+  if (quizIsCompleted) {
+    return <QuizCompleted />
+  }
+
+  if (quiz !== null && totalQuestion > 0) {
+    return <Quiz />
+  }
+
+  return <Home />
 }
 
 export default App

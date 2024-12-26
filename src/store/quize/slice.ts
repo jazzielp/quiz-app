@@ -10,7 +10,8 @@ const initialState: IGlobalState = {
   mode: MODE.dark,
   indexQuestion: 0,
   isAnswerCorrect: undefined,
-  countAnswerCorrect: 0
+  countAnswerCorrect: 0,
+  quizIsCompleted: false
 }
 
 export const quizzesSlice = createSlice({
@@ -34,9 +35,12 @@ export const quizzesSlice = createSlice({
     },
     incrementIndexQuestion: (state) => {
       state.indexQuestion++
+    },
+    updateQuizIsCompleted: (state) => {
+      state.quizIsCompleted = true
     }
   }
 })
 
 export default quizzesSlice.reducer
-export const { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect, incrementCountAnswerCorrect, incrementIndexQuestion } = quizzesSlice.actions
+export const { changeMode, updateQuize, selectedAnswer, updateIsAnswerCorrect, incrementCountAnswerCorrect, incrementIndexQuestion, updateQuizIsCompleted } = quizzesSlice.actions

@@ -24,7 +24,6 @@ export function SelectAnswer ({ correctAnswer, option, number, isAnswerCorrect }
       setDivStyle('dark:border-navy border-white')
       setSpanStyle('bg-lightGrey text-greyNavy')
     } else if (userAnswer !== '' && userAnswer === option && isAnswerCorrect === undefined) {
-      console.log('entra en ', option)
       setSpanStyle('bg-purpol text-white')
       setDivStyle('border-purpol')
     } else if (isAnswerCorrect === true && option === correctAnswer) {

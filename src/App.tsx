@@ -7,7 +7,7 @@ import { QuizCompleted } from './components/QuizCompleted'
 import { useEffect, useState } from 'react'
 
 function App (): JSX.Element {
-  const { quiz, indexQuestion } = useAppSelector((state) => state.quizzes)
+  const { quiz, indexQuestion, quizIsCompleted } = useAppSelector((state) => state.quizzes)
   const [totalQuestion, setTotalQuestion] = useState(0)
 
   useEffect(() => {
@@ -17,9 +17,9 @@ function App (): JSX.Element {
   }, [quiz, indexQuestion])
   return (
     <>
-      {totalQuestion >= indexQuestion && <QuizCompleted />}
+      {quizIsCompleted && <QuizCompleted />}
       {
-        quiz !== null ? <Quiz /> : <Home />
+        totalQuestion > 0 ? <Quiz /> : <Home />
       }
     </>
   )

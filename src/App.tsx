@@ -15,7 +15,6 @@ function App (): JSX.Element {
       setTotalQuestion(quiz?.questions.length)
     }
   }, [quiz, indexQuestion])
-  console.log(quizIsCompleted)
 
   if (quizIsCompleted) {
     return <QuizCompleted />
